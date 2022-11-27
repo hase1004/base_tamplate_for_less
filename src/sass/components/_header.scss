@@ -1,4 +1,58 @@
-.header{
+.header {
     background-color: red;
     color: #fff;
+    display: flex;
+    align-items: center;
+
+    &__logo {
+        color: #fff;
+    }
+
+    &__burger {
+        position: relative;
+
+        span {
+            height: 2px;
+            width: 14px;
+            background-color: #fff;
+        }
+
+        :first-child {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        :last-child {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+
+        }
+
+        :nth-child(2) {
+            position: absolute;
+            left: 0;
+            top: calc(50%-1px)
+        }
+
+        &.active {
+            :first-child {
+                transform: rotate(45deg);
+                bottom: 50%;
+
+            }
+
+            :last-child {
+                transform: rotate(-45deg);
+                bottom: 40%;
+            }
+            :nth-child(2) {
+
+            }
+
+        }
+
+    }
+
 }
